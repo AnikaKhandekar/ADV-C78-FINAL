@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>
+            Project 78
+        </title>
+
+        <style>
+            body {
+                text-align: center;
+                background-color: rgb(0, 255, 221);
+            }
+
+            #heading {
+                color: rgba(0, 0, 0, 0.63);
+                font-family: cursive;
+                text-decoration-line: underline;
+                text-decoration-style: wavy;
+                text-decoration-color: rgb(25, 209, 209);
+            }
+
+            #image {
+                height: 450px;
+                width: 450px;
+                border-radius: 10%;
+                border-style: double;
+                border-width: 5px;
+                background-color: white;
+            }
+
+            #name {
+               color: blueviolet; 
+               font-weight: bold;
+               font-size: 22px;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <h1 id="heading">THE FAMILY BOOK</h1>
+
+        <img id="image" 
+        src="https://lh3.googleusercontent.com/BDvjIBmF9xBNkAoHbsAatn8FVRajuko7-PwsPlISsVboaPY1ARy45yanmMP96wWYmvgN3DdfmsXw61GT91c4vDkRxeHt0Af4cm9kWyT8-IOai2pgFiXeHfMo3jnpYkXPCtDlA9MIwcBXDwT6b8q_J9j3yGRqc5c1q-9EQXxmzgOAeseSsTIrx7LZ6lblAbFRw1lAAU4jzTn0qAFFCJPDAwkRIBmEJgnRgm5o-4_VoRr1MBFIVW8ZovBA8f7aCasnpIpAbsOCD0sZUoYHWuOOfD3VfGxQaN9k8LzNGmAklkXLoDer6hLoAUiewJYdfS2TVLnaU9LWCIeA1ltxLD76TnCOIpJ5uaA9ptckZYcdEwg9HaBPDAnlcTWoHY-O3KWZBlkqabQ8RF6D3km3Ufw_N43NrmkzP_c7Ag6oXaMVJK3aoBiLatbNP7SZ9rW6Q5PRMlIkF4fKI5Haj4EVfaQOOMz6OAZk4kfsYTh2nZfYJA0LVlc1-QrQAisT3mmdf05_tiVgpy8mv3e5t0LoxQdfJvCWrmsYApvzH9-JtmrdeHePU6X6DtO98u2WKavxl_UpxVp0bI8Q4hiA8Ntv9Bj8W6sD0zwJOgnq3ZjTDW8BlKLPjwKH_QSFLyIt9Jvuv4hglC06EXPDLuwSjPWj0AU0UEesS6B6PUaKfEmzDk7xTqkQWX_aBFMAHbyIX9zhKmDJZKWktslWjaBHG25_c1lETB4X=w1155-h866-no?authuser=0">
+
+        <h4 id="name"></h4>
+
+        <button onclick="next()">
+            Next
+        </button>
+
+
+        <script>
+            var members= [
+                "https://i.pinimg.com/280x280_RS/9f/23/cb/9f23cb2f37b547c56570721a64889377.jpg",
+                "https://lh3.googleusercontent.com/7g-u1xRGYotC42sKm2RIzSpCld-tYjd54p6qfAREgwO1kUMaYCcncqHYiVF6SElHdQeK1qxTwJ7hQKNVRZh5gXmB39_2-oqR6M4_3JlZC4qMzkIgg9sHrrrXf5SQT0Ezh0WSa16uSpOvcnzhqvaQ1bFsJZ4GwBIagDrtPu_bfFrcT5VEWQyyRcHcOpTOf-nvi5fTDxzuP6JhSbSkPc_ogGgBkPTKjbzTB0QoCYEwBSHhEj14E8X9u2bTVl4XcpiP3WD9KIrHrRz1Cd_alx7fVCzSVstwUYCnZXfnsWMiuoh0m3C_8dlgCegyfPWJuCmAUkg-RZ4jk-J25NHY1ms_Fqj4ecNU3r_jPH5etLHh917z8Q_E0zqJfhK_QCkrgF-wgbxnzY8_eAhUUS3m6yw0NtHsyWqrQKUEhXXIi3CsXotpBXJu_pfRrRfqdTEosLttxwyXYyUWEGOlVLT3eOR0idRBxhZTmnr96XpDZpbbPa-YhKPNc_ogQ0myrJjWz-eogMgBy1JQX2TWz2dettkyPqzbalWEtjnQwSIf1WGzj7TN3WzgolisWuYoUj3Muf3fpRIpfte2U_8aIO13kHuggv33HTQ4L9RWYUwr_gWob8MED-ugslnn5Dvxf7G8an3pVP4h2QhMKtJG_cPFIxbwZA1efeRPkZVYNDvArslRjGsxGxZoXRMK4bJhAz-mwuvdafbTuy42DMjDQkB2ncgotrc2=w410-h866-no?authuser=1",
+                "https://lh3.google.com/pw/AM-JKLVR6CrJmgSM2W5oTwfOaKUEqk4cotHK6b76PRFO1r7EaAqBKp74qJyzP0Ts99x_7SrBaEwJuGmECvj-0jbIDS_QsTuZRg=w650-h866-no?authuser=0",
+                "https://lh3.googleusercontent.com/i42k48KSZ-ETUrpIYr9D1odenarVP0j3zZta3XLvIwFLsSpLBuRcoY1FHqVXCOtHUycBMfjjKNo_Khblspcnokfi1AiLMNPAqf4-wcw5nWgrj2g9FadLIcABTKnSbgRquCd-8unyERfQSFSENQPgs2h4ZJ6GijMC6hYCDRpdZKkz6pBjroT-EjJulCo2qRgruGy1cpCA3wWaFhcS1OGJe0SRK-5u7X81gN_Sp_qQ8lf0Jskl1ofEWJHkSGE-WhCXKUydZNtt8jctnF8BMsi3KvFEinftasXF5rm0hZIDAVXhkWrnlUT-8ASODtDLH8cueE4IlTEwbUgMNTWRU8rEfIVerTsv5WwIt6ai1hSnDtL-deHxryT-EGZLjFhvQqNrsrTPZYsDeQnrWNQmx-X6ioy23fNQPocdiAL7TTRUnITpWhJ-WpEvkoCKrUTFeAChvwBfzfl4lJCay1YUqWb-Z4bjIFnkOWM3gUi2IedPe_Zv05lQf29hH7cwMP7Qv1kH4t-CKchCDpFIR09YTQfzcZyD4kzLVHhTro8wtJO7toiGXIyxoR-2U8S6wCp7gkAA1u-VBHa7rtCFmQp5cKrigaFrkfz4nPKNV0B3um84Tn_fxrMLJTWHdr0l8lmQPDqJjTkAC8fdKZLcJ-VqErlmt0PV3V3EfKQkx5UKAxzlyb24AhwpWRxt0jSFYASMrElW-Gec0vKs3-uWIBMAe0guipvWEg=w872-h866-no?authuser=1",
+            ];
+            var names= [
+                "My Father- Mr Chidhgahan Khandekar",
+                " My Mother- Mrs. Rashi Khandekar",
+                "Myself Anika Khandekar",
+                "My pet brother- Oreo"
+            ];
+            var i=0;
+            function next(){
+            document.getElementById("image").src=members[i];
+            document.getElementById("name").innerHTML=names[i];
+            if (i>4){
+            i=0;
+            }
+            else i++;
+            };
+        </script>
+    </body>
+</html>
